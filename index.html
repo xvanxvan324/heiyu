@@ -1,16 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>黑雨</title>
-<style>
-    iframe {
-        width: 100%;
-    }
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="baidu-site-verification" content="QJJFO3y5eo">
+    <title>小暄暄 &amp; 小彰彰的歌单♥️♥️♥️</title>
+    <style>
+        /* 基本样式 */
+        body.landing {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        #page-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header 样式 */
+        #header {
+            background-color: #c50000;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+        }
+
+        #header h1 {
+            font-size: 2em;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Banner 样式 */
+        #banner {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        #banner h2 {
+            font-style: italic;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        #banner iframe {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 330px;
+            height: 450px;
+            position: relative;
+            z-index: 1; /* 确保 iframe 在转圈动画之上 */
+        }
+
+        #banner span {
+            display: block;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* 加载转圈样式 */
+        #loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #c50000; /* Red color */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            display: block; /* 默认显示转圈动画 */
+            z-index: 0; /* 确保转圈动画在 iframe 下 */
+        }
+
+        /* 转圈动画 */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            #banner iframe {
+                width: 100%;
+                height: 350px;
+            }
+
+            #header {
+                padding: 10px 0;
+            }
+
+            #banner h2 {
+                font-size: 24px;
+            }
+
+            #banner span {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <iframe src="https://minmin.world">Loading…</iframe>  
+<body class="landing">
+    <div id="page-wrapper">
+        <!-- Header Section -->
+        <header id="header" class="alt">
+            <h1>Fuck 😘 music.163.com</h1>
+        </header>
+
+        <!-- Banner Section -->
+        <section id="banner">
+            <div class="inner">
+                <h2>小暄暄 &amp; 小彰彰的歌单</h2>
+                <!-- 加载转圈 -->
+                <div id="loader"></div> 
+                <!-- iframe播放器 -->
+                <p>
+                    <iframe id="musicIframe" frameborder="no" border="0" marginwidth="0" marginheight="0"
+                            src="//music.163.com/outchain/player?type=0&id=12749518118&auto=1&height=430"></iframe>
+                </p>
+                <span>我们喜欢的音乐。❤️❤️</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 获取 iframe 和 loader 元素
+        const iframe = document.getElementById('musicIframe');
+        const loader = document.getElementById('loader');
+
+        // 监听 iframe 加载完成事件
+        iframe.onload = function() {
+            loader.style.display = 'none'; // iframe 加载完成后隐藏转圈动画
+        };
+
+        // 监听 iframe 加载失败事件
+        iframe.onerror = function() {
+            loader.style.display = 'none'; // 如果加载失败，隐藏转圈动画
+            alert('音乐播放器加载失败，请稍后重试！');
+        };
+    </script>
 </body>
 </html>
