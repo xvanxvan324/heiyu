@@ -2,8 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="baidu-site-verification" content="QJJFO3y5eo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小暄暄 &amp; 小彰彰的歌单♥️♥️♥️</title>
     <style>
         /* 基本样式 */
@@ -14,13 +13,18 @@
             padding: 0;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            height: 100vh; /* 使页面高度为100vh，保证垂直居中 */
+           
         }
 
         #page-wrapper {
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
             padding: 20px;
+            text-align: center; /* 水平居中 */
         }
 
         /* Header 样式 */
@@ -28,7 +32,6 @@
             background-color: #c50000;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
             margin-bottom: 8px;
             border-radius: 8px;
             font-family: 'Georgia', serif;
@@ -42,13 +45,12 @@
 
         /* Banner 样式 */
         #banner {
-            text-align: center;
             background-color: #fff;
-            padding: 40px 20px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
             position: relative;
+            padding: 20px;
+            display: inline-block; /* 保证它不占据整个行宽 */
         }
 
         #banner h2 {
@@ -64,7 +66,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 330px;
             height: 450px;
-            position: relative;
             z-index: 1; /* 确保 iframe 在转圈动画之上 */
         }
 
@@ -130,13 +131,9 @@
         <section id="banner">
             <div class="inner">
                 <h2>小暄暄 &amp; 小彰彰的歌单</h2>
-                <!-- 加载转圈 -->
                 <div id="loader"></div> 
                 <!-- iframe播放器 -->
-                <p>
-                    <iframe id="musicIframe" frameborder="no" border="0" marginwidth="0" marginheight="0"
-                            src="//music.163.com/outchain/player?type=0&id=12749518118&auto=1&height=430"></iframe>
-                </p>
+                <iframe id="musicIframe" frameborder="no" border="0" marginwidth="0" marginheight="0" width="260" height="500" src="//music.163.com/outchain/player?type=0&id=12749518118&auto=1&height=430"></iframe>
                 <span>我们喜欢的音乐。❤️❤️</span>
             </div>
         </section>
